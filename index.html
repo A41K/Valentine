@@ -64,14 +64,14 @@
     });
 
     noButton.addEventListener('click', () => {
-      currentScale += 0.5; // Increase scale by 0.5 each time
+      currentScale += 2.5; // Increase scale by 0.5 each time
       yesButton.style.transform = `scale(${currentScale})`;
 
       // Move the No button to stay beside the Yes button
       const yesButtonRect = yesButton.getBoundingClientRect();
       noButton.style.position = 'absolute';
       noButton.style.top = `${yesButtonRect.top}px`;
-      noButton.style.left = `${yesButtonRect.right + 10}px`;
+      noButton.style.left = `${yesButtonRect.right + 90}px`;
     });
   </script>
 </body>
