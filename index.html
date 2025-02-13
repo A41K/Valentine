@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine's Day</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: wheat;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      color: black;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    .button-container {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .yes {
+      background-color: #28a745;
+      color: white;
+      transform: scale(1);
+      position: relative;
+    }
+    .no {
+      background-color: #dc3545;
+      color: white;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <h1>Will you be my Valentine?</h1>
+  <div class="button-container">
+    <button id="yesButton" class="yes">Yes</button>
+    <button id="noButton" class="no">No</button>
+  </div>
+
+  <script>
+    const yesButton = document.getElementById('yesButton');
+    const noButton = document.getElementById('noButton');
+
+    let currentScale = 1;
+
+    yesButton.addEventListener('click', () => {
+      window.location.href = 'yes.html'; // Redirect to yes.html
+    });
+
+    noButton.addEventListener('click', () => {
+      currentScale += 0.5; // Increase scale by 0.5 each time
+      yesButton.style.transform = `scale(${currentScale})`;
+
+      // Move the No button to stay beside the Yes button
+      const yesButtonRect = yesButton.getBoundingClientRect();
+      noButton.style.position = 'absolute';
+      noButton.style.top = `${yesButtonRect.top}px`;
+      noButton.style.left = `${yesButtonRect.right + 10}px`;
+    });
+  </script>
+</body>
+</html>
