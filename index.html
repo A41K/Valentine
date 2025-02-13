@@ -19,6 +19,7 @@
       color: black;
       font-size: 2rem;
       margin-bottom: 2rem;
+      text-align: center;
     }
     .button-container {
       display: flex;
@@ -26,8 +27,8 @@
       align-items: center;
     }
     button {
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
+      padding: 1rem 2rem;
+      font-size: 2rem;
       border: none;
       border-radius: 12px;
       cursor: pointer;
@@ -44,14 +45,29 @@
       color: white;
       position: relative;
     }
+    .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: #000;
+    color: white;
+}
   </style>
 </head>
 <body>
-  <h1>Will you be my Valentine?</h1>
+  <h1>Leszel a Valentínom? (Csak igen)</h1>
   <div class="button-container">
-    <button id="yesButton" class="yes">Yes</button>
-    <button id="noButton" class="no">No</button>
+    <button id="yesButton" class="yes">Igen</button>
+    <button id="noButton" class="no">Nem</button>
+    <footer class="footer">
+        Ez én általam készült 100% Árok András
+      </footer>
   </div>
+
+
 
   <script>
     const yesButton = document.getElementById('yesButton');
@@ -71,7 +87,7 @@
       const yesButtonRect = yesButton.getBoundingClientRect();
       noButton.style.position = 'absolute';
       noButton.style.top = `${yesButtonRect.top}px`;
-      noButton.style.left = `${yesButtonRect.right + 90}px`;
+      noButton.style.left = `${yesButtonRect.right + 130}px`;
     });
   </script>
 </body>
